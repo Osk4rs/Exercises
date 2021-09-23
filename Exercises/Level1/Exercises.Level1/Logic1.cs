@@ -100,7 +100,31 @@ namespace Exercises.Level1
         /// </summary>
         public int CaughtSpeeding(int speed, bool isBirthday)
         {
-            throw new NotImplementedException();
+            if (isBirthday)
+            {
+               speed = speed - 5 ;
+            }
+
+            if (speed <= 60)
+            {
+                return 0;
+            }
+
+            if (speed >=61 && speed <= 80)
+            {
+                return 1;
+            }
+
+            if (speed >= 81)
+            {
+                return 2;
+            }
+
+            return 0;
+
+
+
+
         }
 
         /// <summary>
@@ -113,7 +137,15 @@ namespace Exercises.Level1
         /// </summary>
         public int SortaSum(int a, int b)
         {
-            throw new NotImplementedException();
+
+            int summ = a + b;
+
+            if ( summ >= 10 && summ <= 19 )
+            {
+                return 20;
+            }
+            
+                return summ;
         }
 
         /// <summary>
@@ -129,7 +161,31 @@ namespace Exercises.Level1
         /// </summary>
         public string AlarmClock(int day, bool vacation)
         {
-            throw new NotImplementedException();
+
+            if (day >= 1 && day <= 5)
+            {
+                Console.WriteLine("7:00");
+            }
+
+            if (day <= 0 && day >= 6)
+            {
+                Console.WriteLine("7:00");
+            }
+
+            if (day <= 0 && day >= 6 && vacation)
+            {
+                Console.WriteLine("10:00");
+            }
+
+            if (day <= 0 && day >= 6 && vacation)
+            {
+                Console.WriteLine("off");
+            }
+
+            else Console.WriteLine("off");
+
+            
+
         }
 
         /// <summary>
