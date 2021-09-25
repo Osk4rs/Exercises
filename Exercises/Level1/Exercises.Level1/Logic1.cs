@@ -162,29 +162,29 @@ namespace Exercises.Level1
         public string AlarmClock(int day, bool vacation)
         {
 
-            if (day >= 1 && day <= 5)
-            {
-                Console.WriteLine("7:00");
-            }
+            //if (day >= 1 && day <= 5)
+            //{
+            //    Console.WriteLine("7:00");
+            //}
 
-            if (day <= 0 && day >= 6)
-            {
-                Console.WriteLine("7:00");
-            }
+            //if (day <= 0 && day >= 6)
+            //{
+            //    Console.WriteLine("7:00");
+            //}
 
-            if (day <= 0 && day >= 6 && vacation)
-            {
-                Console.WriteLine("10:00");
-            }
+            //if (day <= 0 && day >= 6 && vacation)
+            //{
+            //    Console.WriteLine("10:00");
+            //}
 
-            if (day <= 0 && day >= 6 && vacation)
-            {
-                Console.WriteLine("off");
-            }
+            //if (day <= 0 && day >= 6 && vacation)
+            //{
+            //    Console.WriteLine("off");
+            //}
 
-            else Console.WriteLine("off");
+            //else Console.WriteLine("off");
 
-            
+            throw new NotImplementedException();
 
         }
 
@@ -199,7 +199,32 @@ namespace Exercises.Level1
         /// </summary>
         public bool Love6(int a, int b)
         {
-            throw new NotImplementedException();
+            Math.Abs(a);
+            Math.Abs(b);
+
+
+            if (a == 6)
+            {
+                return true;
+            }
+            if (b == 6)
+            {
+                return true;
+            }
+            if (a + b == 6)
+            {
+                return true;
+            }
+            if (a - b == 6)
+            {
+                return true;
+            }
+            if ( b - a == 6)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -213,7 +238,26 @@ namespace Exercises.Level1
         /// </summary>
         public bool In1To10(int n, bool outsideMode)
         {
-            throw new NotImplementedException();
+
+            if (n >= 1 && n <= 10)
+            {
+                return true;
+            }
+
+
+
+            if (n <= 1 && outsideMode)
+            {
+                return true;
+            }
+
+            if (n >= 10 && outsideMode)
+            {
+                return true;
+            }
+
+
+            return false;
         }
 
         /// <summary>
