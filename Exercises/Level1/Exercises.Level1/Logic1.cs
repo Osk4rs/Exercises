@@ -161,30 +161,27 @@ namespace Exercises.Level1
         /// </summary>
         public string AlarmClock(int day, bool vacation)
         {
+            if (day == 0 && vacation || day == 6 && vacation)
+            {
+                return "off";
+            }
 
-            //if (day >= 1 && day <= 5)
-            //{
-            //    Console.WriteLine("7:00");
-            //}
+            if (day >= 1 && vacation || day <= 5 && vacation)
+            {
+                return "10:00";
+            }
 
-            //if (day <= 0 && day >= 6)
-            //{
-            //    Console.WriteLine("7:00");
-            //}
+            if (day == 0 || day == 6)
+            {
+                return "10:00";
+            }
 
-            //if (day <= 0 && day >= 6 && vacation)
-            //{
-            //    Console.WriteLine("10:00");
-            //}
+            if (day >= 1 || day <= 5)
+            {
+                return "7:00";
+            }
 
-            //if (day <= 0 && day >= 6 && vacation)
-            //{
-            //    Console.WriteLine("off");
-            //}
-
-            //else Console.WriteLine("off");
-
-            throw new NotImplementedException();
+            return "off";
 
         }
 
@@ -239,19 +236,13 @@ namespace Exercises.Level1
         public bool In1To10(int n, bool outsideMode)
         {
 
+ 
             if (n >= 1 && n <= 10)
             {
                 return true;
             }
 
-
-
-            if (n <= 1 && outsideMode)
-            {
-                return true;
-            }
-
-            if (n >= 10 && outsideMode)
+            if (n >= 10 && outsideMode || n <= 1 && outsideMode)
             {
                 return true;
             }
@@ -270,7 +261,14 @@ namespace Exercises.Level1
         /// </summary>
         public bool SpecialEleven(int n)
         {
-            throw new NotImplementedException();
+            int number = n % 11;
+
+            if (number == 1 || number == 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -283,7 +281,19 @@ namespace Exercises.Level1
         /// </summary>
         public bool More20(int n)
         {
-            throw new NotImplementedException();
+
+            int number = n % 20;
+         
+            if (number == 2)
+            {
+                return true;
+            }
+            if (number == 1)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -296,7 +306,25 @@ namespace Exercises.Level1
         /// </summary>
         public bool Old35(int n)
         {
-            throw new NotImplementedException();
+            int number3 = n % 3;
+            int number5 = n % 5;
+
+            if (number3 == 0 && number5 == 0)
+            {
+                return false;
+            }
+
+            if (number3 == 0)
+            {
+                return true;
+            }
+
+            if (number5 == 0)
+            {
+                return true;
+            }
+             
+            return false;
         }
 
         /// <summary>
@@ -310,7 +338,28 @@ namespace Exercises.Level1
         /// </summary>
         public bool Less20(int n)
         {
-            throw new NotImplementedException();
+
+            int number = n % 20;
+
+            if (number == 0)
+            {
+                 return false;
+            }
+
+            int n1 = n + 1;
+            int n2 = n + 2;
+
+            if (n1% 20 == 0)
+            {
+                return true;
+            }
+
+            if (n2 % 20 == 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -324,7 +373,38 @@ namespace Exercises.Level1
         /// </summary>
         public bool NearTen(int num)
         {
-            throw new NotImplementedException();
+            
+            int n1 = num + 1;
+            int n2 = num + 2;
+            int n3 = num - 1;
+            int n4 = num - 2;
+
+            if (n1 % 10 == 0)
+            {
+                return true;
+            }
+
+            if (n2 % 10 == 0)
+            {
+                return true;
+            }
+
+            if (n3 % 10 == 0)
+            {
+                return true;
+            }
+
+            if (n4 % 10 == 0)
+            {
+                return true;
+            }
+
+            if (num % 10 == 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -337,7 +417,19 @@ namespace Exercises.Level1
         /// </summary>
         public int TeenSum(int a, int b)
         {
-            throw new NotImplementedException();
+            int sum = a + b;
+
+            if (a >= 13 && a <= 19)
+            {
+                return 19;
+            }
+
+            if (b >= 13 && b <= 19)
+            {
+                return 19;
+            }
+
+            return sum;
         }
 
         /// <summary>
@@ -351,7 +443,23 @@ namespace Exercises.Level1
         /// </summary>
         public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
-            throw new NotImplementedException();
+
+            if (isAsleep)
+            {
+                return false;
+            }
+
+            if (isMorning && isMom)
+            {
+                return true;
+            }
+
+            if (isMorning)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -367,7 +475,23 @@ namespace Exercises.Level1
         /// </summary>
         public int TeaParty(int tea, int candy)
         {
-            throw new NotImplementedException();
+
+            if (tea <= 4 || candy <= 4)
+            {
+                return 0;
+            }
+
+            if (tea >= candy * 2 || candy >= tea * 2)
+            {
+                return 2;
+            }
+
+           if ( tea >=5 && candy >=5)
+            {
+                return 1;
+            }
+
+            return 0;
         }
 
         /// <summary>
@@ -381,7 +505,23 @@ namespace Exercises.Level1
         /// </summary>
         public string FizzString(string str)
         {
-            throw new NotImplementedException();
+
+            if (str.StartsWith("f") && str.EndsWith("b"))
+            {
+                return ("FizzBuzz");
+            }
+
+            if (str.StartsWith("f"))
+            {
+                return ("Fizz");
+            }
+
+           if (str.EndsWith("b"))
+            {
+                return ("Buzz");
+            }
+
+                return str;
         }
 
         /// <summary>
@@ -397,7 +537,25 @@ namespace Exercises.Level1
         /// </summary>
         public string FizzString2(int n)
         {
-            throw new NotImplementedException();
+
+            if (n % 3 == 0 && n % 5 == 0)
+            {
+                return "FizzBuzz!";
+            }
+
+            if (n % 3 == 0)
+            {
+                return "Fizz!";
+            }
+
+            if (n % 5 == 0)
+            {
+                return "Buzz!";
+            }
+
+            string number = n + "!";
+
+            return number;
         }
 
         /// <summary>
@@ -409,7 +567,20 @@ namespace Exercises.Level1
         /// </summary>
         public bool TwoAsOne(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            if (a + b == c)
+            {
+                return true;
+            }
+            if (b + c == a)
+            {
+                return true;
+            }
+            if (c + a == b)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -422,7 +593,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool InOrder(int a, int b, int c, bool bOk)
         {
-            throw new NotImplementedException();
+           
+            if (b>a && c>b)
+            {
+                return true;
+            }
+
+            if (bOk && c>b)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -436,7 +618,17 @@ namespace Exercises.Level1
         /// </summary>
         public bool InOrderEqual(int a, int b, int c, bool bOk)
         {
-            throw new NotImplementedException();
+            if ( a<b && b<c)
+            {
+                return true;
+            }
+
+            if (bOk && a<=b && b<=c)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -463,7 +655,20 @@ namespace Exercises.Level1
         /// </summary>
         public bool LessBy10(int a, int b, int c)
         {
-            throw new NotImplementedException();
+
+            int aMb = a - b;
+            int aMc = a - c;
+            int bMa = b - a;
+            int bMc = b - c;
+            int cMa = c - a;
+            int cMb = c - b;
+
+            if ( aMb >= 10 || aMc >= 10 || bMa >= 10 || bMc >= 10 || cMa >= 10 || cMb >= 10)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -477,9 +682,20 @@ namespace Exercises.Level1
         /// </summary>
         public int WithoutDoubles(int die1, int die2, bool noDoubles)
         {
-            throw new NotImplementedException();
-        }
+            int summ = die1 + die2;
 
+            if (die1 == 6 && die2 == 6 && noDoubles)
+            {
+               summ = 6;
+            }
+
+            if (die1 == die2 && noDoubles)
+            {
+                return summ + 1;
+            }
+
+            return summ;
+        }
         /// <summary>
         /// Given two int values, return whichever value is larger. However if the two values have the
         /// same remainder when divided by 5, then the return the smaller value. However, in all
@@ -492,7 +708,35 @@ namespace Exercises.Level1
         /// </summary>
         public int MaxMod5(int a, int b)
         {
-            throw new NotImplementedException();
+            int aD5 = a % 5;
+            int bD5 = b % 5;
+
+            if (b > a && aD5 == bD5)
+            {
+                return a;
+            }
+
+            if (a > b && aD5 == bD5)
+            {
+                return b;
+            }
+
+            if (a > b)
+            {
+               return a;
+            }
+
+            if (b > a)
+            {
+                return b;
+            }
+
+            if (a == b)
+            {
+                return 0;
+            }
+
+            return 0;
         }
 
         /// <summary>
@@ -507,7 +751,22 @@ namespace Exercises.Level1
         /// </summary>
         public int RedTicket(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            if (a == 2 && b == 2 && c == 2)
+            {
+                return 10;
+            }
+
+            if (a==b && b==c && c==a)
+            {
+                return 5;
+            }
+
+            if (a!=b && a!=c)
+            {
+                return 1;
+            }
+
+            return 0;
         }
 
         /// <summary>
@@ -521,7 +780,22 @@ namespace Exercises.Level1
         /// </summary>
         public int GreenTicket(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            if (a == b && b == c && c == a)
+            {
+                return 20;
+            }
+
+            if (a == b || b == c || c == a)
+            {
+                return 10;
+            }
+
+            if (a != b && b != c && c != a)
+            {
+                return 0;
+            }
+
+            return 0;
         }
 
         /// <summary>
@@ -536,7 +810,23 @@ namespace Exercises.Level1
         /// </summary>
         public int BlueTicket(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            int ab = a + b;
+            int bc = b + c;
+            int ac = a + c;
+
+            int min10 = ab - 10;
+
+            if ( ab == 10 || bc == 10 || ac == 10)
+            {
+                return 10;
+            }
+
+            if ( min10 == bc || min10 == ac)
+            {
+                return 5;
+            }
+
+            return 0;
         }
 
         /// <summary>
