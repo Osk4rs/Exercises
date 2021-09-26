@@ -642,7 +642,16 @@ namespace Exercises.Level1
         /// </summary>
         public bool LastDigit(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            int adiv = a % 10;
+            int bdiv = b % 10;
+            int cdiv = c % 10;
+
+            if (adiv==bdiv || bdiv==cdiv || cdiv==adiv)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
