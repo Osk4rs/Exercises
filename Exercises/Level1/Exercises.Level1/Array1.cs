@@ -323,10 +323,15 @@ namespace Exercises.Level1
         /// </summary>
         public int[] Fix23(int[] nums)
         {
+            if(nums[0] == 2 && nums[1] == 3)
+            {
+                nums[1] = 0;
+            }
 
-
-
-
+            if (nums[1] == 2 && nums[2] == 3)
+            {
+                nums[2] = 0;
+            }
 
             return nums;
         }
@@ -341,7 +346,16 @@ namespace Exercises.Level1
         /// </summary>
         public int Start1(int[] a, int[] b)
         {
-            throw new NotImplementedException();
+            int number = 0;
+
+            if (a.Length >= 1 && a[0] == 1)
+                number++;
+
+            if (b.Length >= 1 && b[0] == 1)
+                number++;
+
+            return number;
+
         }
 
         /// <summary>
@@ -354,7 +368,25 @@ namespace Exercises.Level1
         /// </summary>
         public int[] BiggerTwo(int[] a, int[] b)
         {
-            throw new NotImplementedException();
+            int sumA = a[0] + a[1];
+            int sumB = b[0] + b[1];
+
+            if (sumA > sumB)
+            {
+                return a;
+            }
+
+            if (sumA < sumB)
+            {
+                return b;
+            }
+
+            if (sumA == sumB)
+            {
+                return a;
+            }
+
+            return a;
         }
 
         /// <summary>
@@ -380,7 +412,9 @@ namespace Exercises.Level1
         /// </summary>
         public int[] PlusTwo(int[] a, int[] b)
         {
-            throw new NotImplementedException();
+            int[] array = { a[0], a[1], b[0], b[1] };
+
+            return array;
         }
 
         /// <summary>
@@ -393,7 +427,13 @@ namespace Exercises.Level1
         /// </summary>
         public int[] SwapEnds(int[] nums)
         {
-            throw new NotImplementedException();
+            int first = nums[0];
+
+            nums[0] = nums[nums.Length-1];
+
+            nums[nums.Length - 1] = first;
+
+            return nums;
         }
 
         /// <summary>
