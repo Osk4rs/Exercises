@@ -17,7 +17,15 @@ namespace Exercises.Level1
         /// </summary>
         public int CountEvens(int[] nums)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            foreach (int num in nums)
+            {
+                if (num % 2 == 0)
+                {
+                    sum++;
+                }
+            }
+            return sum;
         }
 
         /// <summary>
@@ -31,7 +39,17 @@ namespace Exercises.Level1
         /// </summary>
         public int BigDiff(int[] nums)
         {
-            throw new NotImplementedException();
+
+            int Min = nums[0];
+            int Max = nums[0];
+
+            for (int i = 1; i < nums.Length; i++)
+            {
+                Min = Math.Min(Min, nums[i]);
+                Max = Math.Max(Max, nums[i]);
+            }
+            return Max - Min;
+
         }
 
         /// <summary>
@@ -47,7 +65,18 @@ namespace Exercises.Level1
         /// </summary>
         public int CenteredAverage(int[] nums)
         {
-            throw new NotImplementedException();
+            int Min = nums[0];
+            int Max = nums[0];
+            int Sum = nums[0];
+
+            for (int i = 1; i < nums.Length; i++)
+            {
+                Sum += nums[i];
+                Min = Math.Min(Min, nums[i]);
+                Max = Math.Max(Max, nums[i]);
+            }
+
+            return (Sum - Min - Max) / (nums.Length - 2);
         }
 
         /// <summary>
@@ -61,7 +90,28 @@ namespace Exercises.Level1
         /// </summary>
         public int Sum13(int[] nums)
         {
-            throw new NotImplementedException();
+
+            if (nums.Length == 0)
+            {
+                return 0; 
+            }
+
+            int Sum = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 13) 
+                {
+                    i++;
+
+                    continue; 
+                }
+
+                Sum += nums[i];
+            }
+
+            return Sum;
+
         }
 
         /// <summary>
@@ -75,7 +125,28 @@ namespace Exercises.Level1
         /// </summary>
         public int Sum67(int[] nums)
         {
-            throw new NotImplementedException();
+            if (nums.Length == 0) 
+            { 
+                return 0; 
+            }
+
+            int Sum = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 6)
+                { 
+                    while (nums[i] != 7) 
+                    { 
+                        i++; 
+                    } 
+                    
+                    continue; 
+                }
+                Sum += nums[i];
+            }
+
+            return Sum;
         }
 
         /// <summary>
@@ -87,7 +158,17 @@ namespace Exercises.Level1
         /// </summary>
         public bool Has22(int[] nums)
         {
-            throw new NotImplementedException();
+
+            for (int i = 0; i < nums.Length - 1; i++)
+            {
+                if (nums[i] == 2 && nums[i + 1] == 2)
+                {
+                    return true;
+                }
+                
+            }
+
+                return false;
         }
 
         /// <summary>
@@ -99,7 +180,17 @@ namespace Exercises.Level1
         /// </summary>
         public bool Lucky13(int[] nums)
         {
-            throw new NotImplementedException();
+
+           foreach (int i in nums)
+            {
+                if (i == 1 || i == 3)
+                {
+                    return false;
+                }
+
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -111,7 +202,17 @@ namespace Exercises.Level1
         /// </summary>
         public bool Sum28(int[] nums)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+
+            foreach (int i in nums)
+            {
+                if (i == 2) 
+                { 
+                    sum = sum + 2;
+                }
+            }
+
+            return sum == 8;
         }
 
         /// <summary>
@@ -123,7 +224,23 @@ namespace Exercises.Level1
         /// </summary>
         public bool More14(int[] nums)
         {
-            throw new NotImplementedException();
+   
+            int sum = 0;
+
+            foreach (int i in nums)
+            {
+                if (i == 1) 
+                { 
+                    sum++; 
+                }
+
+                else if (i == 4) 
+                { 
+                    sum--; 
+                }
+            }
+
+            return sum > 0;
         }
 
         /// <summary>
