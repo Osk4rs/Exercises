@@ -255,7 +255,16 @@ namespace Exercises.Level1
         /// </summary>
         public int[] FizzArray(int n)
         {
-            throw new NotImplementedException();
+
+            int[] nums = new int[n];
+            
+            for (int i = 0; i < n; i++)
+            {
+                nums[i]=i;
+            }
+
+            return nums;
+
         }
 
         /// <summary>
@@ -267,7 +276,15 @@ namespace Exercises.Level1
         /// </summary>
         public bool Only14(int[] nums)
         {
-            throw new NotImplementedException();
+            foreach (int i in nums)
+            {
+                if( i != 1 && i != 4 )
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -281,7 +298,14 @@ namespace Exercises.Level1
         /// </summary>
         public string[] FizzArray2(int nums)
         {
-            throw new NotImplementedException();
+            string[] numbers = new string[nums];
+
+            for (int i = 0; i < nums; i++)
+            {
+                numbers[i] = $"{i}";
+            }
+
+            return numbers;
         }
 
         /// <summary>
